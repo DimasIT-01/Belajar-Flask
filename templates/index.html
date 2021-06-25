@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <title>Prediksi Tinggi air</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+	<header>
+		<div class="jumbotron">
+			<h1>Prediksi Tinggi air</h1>
+		</div>
+	</header>
+	<form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="hujan" placeholder="curah hujan" required="required" />
+        <input type="text" name="penyinaran" placeholder="lama penyinaran matahari" required="required" />
+		<input type="text" name="suhu" placeholder="suhu rata-rata" required="required" />
+		<input type="text" name="angin" placeholder="rata-rata kecepatan angin" required="required" />
+		<input type="text" name="kelembapan" placeholder="kelembapan rata-rata" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Prediksi</button>
+    </form>
+	<br>
+	<br>
+		{{ prediction_text }}
+
+</body>
+</html>
